@@ -1,0 +1,435 @@
+<div id="mi-slider" class="mi-slider">
+    <ul class="product-slider-category">
+        <li>
+            <a href="#"><img src="http://via.placeholder.com/300x400" alt="img01">
+                <h4>One</h4>
+            </a>
+        </li>
+        <li><a href="#"><img src="http://via.placeholder.com/300x400" alt="img02"><h4>One</h4></a></li>
+        <li><a href="#"><img src="http://via.placeholder.com/300x400" alt="img03"><h4>Placeholder</h4></a></li>
+        <li><a href="#"><img src="http://via.placeholder.com/300x400" alt="img04"><h4>Placeholder</h4></a></li>
+    </ul> 
+    <ul class="product-slider-category">
+        <li><a href="#"><img src="http://via.placeholder.com/300x400" alt="img05"><h4>Two</h4></a></li>
+        <li><a href="#"><img src="http://via.placeholder.com/300x400" alt="img06"><h4>Placeholder </h4></a></li>
+        <li><a href="#"><img src="http://via.placeholder.com/300x400" alt="img07"><h4>Placeholder</h4></a></li>
+        <li><a href="#"><img src="http://via.placeholder.com/300x400" alt="img08"><h4>Placeholder</h4></a></li>
+    </ul>
+    <ul class="product-slider-category">
+        <li><a href="#"><img src="http://via.placeholder.com/300x400" alt="img09"><h4>Three</h4></a></li>
+        <li><a href="#"><img src="http://via.placeholder.com/300x400g" alt="img10"><h4>Placeholder</h4></a></li>
+        <li><a href="#"><img src="http://via.placeholder.com/300x400g" alt="img11"><h4>Placeholder</h4></a></li>
+    </ul>
+    <ul class="product-slider-category">
+        <li><a href="#"><img src="http://via.placeholder.com/300x400g" alt="img12"><h4>Four</h4></a></li>
+        <li><a href="#"><img src="http://via.placeholder.com/300x400g" alt="img13"><h4>Placeholder </h4></a></li>
+        <li><a href="#"><img src="http://via.placeholder.com/300x400g" alt="img14"><h4>Placeholder </h4></a></li>
+        <li><a href="#"><img src="http://via.placeholder.com/300x400g" alt="img15"><h4>Placeholder</h4></a></li>
+    </ul>
+    <nav>
+        <a href="#" class="back-arrow"><</a>
+        <a href="#" class="cat-select">X</a>
+        <a href="#" class="cat-select">X</a>
+        <a href="#" class="cat-select">X</a>
+        <a href="#" class="cat-select">X</a>
+        <a href="#" class="next-arrow">></a>
+    </nav>
+
+   
+</div>
+    
+
+
+<style>
+
+    .mi-slider {
+        position: relative;
+        margin-top: 120px;
+        height: 490px;
+    }
+
+    .mi-slider ul {
+        list-style-type: none;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 140px;
+        overflow: hidden;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .mi-slider ul .mi-current {
+        pointer-events: auto;
+    }
+
+    .mi-slider ul li {
+        display: inline-block;
+        padding: 20px;
+        width: 20%;
+        max-width: 300px;
+        transform: translateX(600%);
+        transition: opacity 0.2s linear;
+    }
+
+    mi-slider ul li a,
+    .mi-slider ul li img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .mi-slider ul li a {
+        outline: none;
+        cursor: pointer;
+    }
+
+    .mi-slider ul li img {
+        max-width: 100%;
+        border: none;
+    }
+
+    .mi-slider ul li h4 {
+        display: inline-block;
+        font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 18px;
+        padding: 20px 10px 0;
+    }
+
+    .mi-slider ul li:hover {
+        opacity: 0.7;
+    } 
+
+    .mi-slider nav {
+        position: relative;
+        top: 400px;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        border-top: 5px solid #333;
+    }
+
+    .mi-slider nav a {
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        padding: 40px 30px 30px 34px;
+        position: relative;
+        color: #888;
+        outline: none;
+        transition: color 0.2s linear;
+    }
+
+    .mi-slider nav a:hover,
+    .mi-slider nav a.mi-selected {
+        color: #000;
+    }
+
+    .mi-slider nav a.mi-selected:after,
+    .mi-slider nav a.mi-selected:before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        border: solid transparent;
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .mi-slider nav a.mi-selected:after {
+        border-color: transparent;
+        border-top-color: #fff;
+        border-width: 20px;
+        left: 50%;
+        margin-left: -20px;
+    }
+
+    .mi-slider nav a.mi-selected:before {
+        border-color: transparent;
+        border-top-color: #333;
+        border-width: 27px;
+        left: 50%;
+        margin-left: -27px;
+    }
+
+
+    .mi-slider ul:first-child li {
+        animation: scaleUp 350ms ease-in-out both;
+    }
+
+    @keyframes scaleUp {
+        0% { transform: translateX(0) scale(0); }
+        100% { transform: translateX(0) scale(1); }
+    }
+
+    .mi-slider ul:first-child li:first-child {
+        animation-delay: 90ms;
+    }
+
+    .mi-slider ul:first-child li:nth-child(2) {
+        animation-delay: 180ms;
+    }
+
+    .mi-slider ul:first-child li:nth-child(3) {
+        animation-delay: 270ms;
+    }
+
+    .mi-slider ul:first-child li:nth-child(4) {
+        animation-delay: 360ms;
+    }
+
+    .mi-slider ul.mi-moveFromRight li {
+	animation: moveFromRight 350ms ease-in-out both;
+    }
+
+    /* moveFromLeft */
+
+    .mi-slider ul.mi-moveFromLeft li {
+        animation: moveFromLeft 350ms ease-in-out both;
+    }
+
+    /* moveToRight */
+
+    .mi-slider ul.mi-moveToRight li {
+        animation: moveToRight 350ms ease-in-out both;
+    }
+
+    /* moveToLeft */
+
+    .mi-slider ul.mi-moveToLeft li {
+        animation: moveToLeft 350ms ease-in-out both;
+    }
+
+    .mi-slider ul.mi-moveToLeft li:first-child,
+    .mi-slider ul.mi-moveFromRight li:first-child,
+    .mi-slider ul.mi-moveToRight li:nth-child(4),
+    .mi-slider ul.mi-moveFromLeft li:nth-child(4) {
+        animation-delay: 0ms;
+    }
+
+    .mi-slider ul.mi-moveToLeft li:nth-child(2),
+    .mi-slider ul.mi-moveFromRight li:nth-child(2),
+    .mi-slider ul.mi-moveToRight li:nth-child(3),
+    .mi-slider ul.mi-moveFromLeft li:nth-child(3) {
+        -webkit-animation-delay: 90ms;
+        animation-delay: 90ms;
+    }
+
+    .mi-slider ul.mi-moveToLeft li:nth-child(3),
+    .mi-slider ul.mi-moveFromRight li:nth-child(3),
+    .mi-slider ul.mi-moveToRight li:nth-child(2),
+    .mi-slider ul.mi-moveFromLeft li:nth-child(2) {
+        -webkit-animation-delay: 180ms;
+        animation-delay: 180ms;
+    }
+
+    .mi-slider ul.mi-moveToLeft li:nth-child(4),
+    .mi-slider ul.mi-moveFromRight li:nth-child(4),
+    .mi-slider ul.mi-moveToRight li:first-child,
+    .mi-slider ul.mi-moveFromLeft li:first-child  {
+        -webkit-animation-delay: 270ms;
+        animation-delay: 270ms;
+    }
+
+    @keyframes moveFromRight {
+        0% { transform: translateX(600%); }
+        100% { transform: translateX(0); }
+    }
+
+    @keyframes moveFromLeft {
+        0% { transform: translateX(-600%); }
+        100% { transform: translateX(0); }
+    }
+
+    @keyframes moveToRight {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(600%); }
+    }
+
+    @keyframes moveToLeft {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-600%); }
+    }
+
+
+    @media screen and (max-width: 910px){
+        .mi-slider nav {
+            max-width: 90%;
+        }
+
+        .mi-slider nav a {
+            font-size: 12px;
+            padding: 40px 10px 30px 14px;
+        }
+    }
+
+    @media screen and (max-width: 740px){
+        .mi-slider {
+            height: 300px;
+        }
+
+        .mi-slider nav {
+            top: 220px;
+        }
+    }
+
+    @media screen and (max-width: 490px){ 
+        .mi-slider {
+            text-align: center;
+            height: auto;
+        }
+
+        .mi-slider ul {
+            position: relative;
+            display: inline;
+            bottom: auto;
+            pointer-events: auto;
+        }
+
+        .mi-slider ul li {
+            animation: none !important;
+            transform: translateX(0) !important;
+            padding: 10px 3px;
+            min-width: 140px;
+        }
+
+        .mi-slider nav {
+            display: none;
+        }
+    }
+
+</style>
+
+
+<script>
+
+        function $(x) {return document.querySelectorAll(x);}
+    
+        function hide(node_list) {
+            for (var i = 0; i < node_list.length; i++) {
+                node_list[i].style.display = 'none';  // Calling myNodeList.item(i) isn't necessary in JavaScript
+            }
+        }
+
+        function show(node_list) {
+            for (var i = 0; i < node_list.length; i++) {
+                node_list[i].style.display = 'inline';  // Calling myNodeList.item(i) isn't necessary in JavaScript
+            }
+        }
+
+        function addClass(element,class_name){
+            if (element.classList)
+                element.classList.add(class_name);
+            else
+                element.className += ' ' + class_name;
+        }
+
+        //mvmentum multi item slider
+        function Mvmentum_slider (slider_id) {
+
+            this.element =  document.getElementById(slider_id);
+
+            this.categories = this.element.getElementsByTagName('ul');
+
+            this.navcategories = this.element.querySelectorAll('nav > .cat-select');
+            
+            this.back_button = this.element.querySelectorAll('nav > .back-arrow').item(0);
+         
+            this.next_button = this.element.querySelectorAll('nav > .next-arrow').item(0);
+
+            this.current = 0;
+
+            this.currcat = this.categories.item(0);
+
+            addClass(this.currcat,'mi-current');
+
+            addClass(this.navcategories.item(0),'mi-selected');
+
+            this.nav_arr = Array.prototype.slice.call(this.navcategories); 
+
+
+            var self = this;
+
+            this.navcategories.forEach(function(elem) {
+                elem.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var cat_index = self.nav_arr.indexOf(this);
+                    self.showCategory(cat_index);
+                });
+            });
+
+            this.back_button.addEventListener('click', function(e) {
+                e.preventDefault();
+                var cat_index = self.current ===  0 ?  (self.categories.length - 1) : (self.current - 1);
+                self.showCategory(cat_index);
+            });
+
+            this.next_button.addEventListener('click', function(e) {
+                e.preventDefault();
+                var cat_index = self.current ===  (self.categories.length - 1) ? 0 : (self.current + 1);
+                self.showCategory(cat_index);
+            });
+
+
+            this.showCategory = function(cat_index){
+                //console.log(this.categories);
+                this.navcategories.item(this.current).classList.remove('mi-selected');
+                //console.log(this.navcategories);
+                
+                addClass(this.navcategories.item(cat_index),'mi-selected');
+              
+                //setup direction for animations
+                var dir = cat_index > this.current ? 'right' : 'left';
+                var toClass = dir === 'right' ? 'mi-moveToLeft' : 'mi-moveToRight';
+                var fromClass = dir === 'right' ? 'mi-moveFromRight' : 'mi-moveFromLeft';
+
+                //update the new and previous categories
+                this.currcat = this.categories.item(this.current);
+                var newcat =  this.categories.item(cat_index);
+                
+                //get the new categories li elements
+                var newcatchild = newcat.getElementsByTagName("li");
+                
+                //get the last animated item from the new category
+            
+                var lastEnter = dir === 'right' ? newcatchild.length - 1 : 0;
+
+                this.currcat.classList.remove('mi-moveToLeft');
+                this.currcat.classList.remove('mi-moveToRight');
+                addClass(this.currcat,toClass);
+                var that = this;
+                setTimeout(function(){
+
+                    newcat.classList.remove('mi-moveToLeft');
+                    newcat.classList.remove('mi-moveToRight');
+                    addClass(newcat,fromClass);
+                    addClass(newcat,'mi-current');
+                    that.current = cat_index;
+                    
+                }, newcatchild.length * 90);
+            }
+
+            window.addEventListener("resize",function(){
+
+                this.categories.forEach(function(elem) { 
+                    elem.classList.remove('mi-current');
+                });
+
+                this.categories.item(0).classList.add('mi-current');
+                
+                this.navcategories.item(current).classList.remove('mi-selected');
+                addClass(this.navcategories.item(0),'mi-selected' );
+            });
+
+        };
+        
+      
+
+    window.onload = function(){
+
+        var slider_1 = new Mvmentum_slider('mi-slider');
+    }
+
+</script>
