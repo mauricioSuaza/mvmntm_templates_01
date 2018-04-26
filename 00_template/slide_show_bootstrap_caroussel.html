@@ -1,6 +1,6 @@
 
 
-<div class="slideshow-container" id="mySlides">
+<div class="slideshow-container" id="my-slider-one">
 
     <div class="mySlides fade" style="background-image: url('http://via.placeholder.com/1200x500');">
         <div class="heading-container first-slide">
@@ -74,9 +74,9 @@
             </a>
         </div>
     </div>
-
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+   
+    <a class="prev left-arrow" >&#10094;</a>
+    <a class="next right-arrow" >&#10095;</a>
 
 </div>
 
@@ -404,68 +404,52 @@
 
 </style>
 
-  <script>
+<script>
 
     function bannerSlider (slider_id) {
 
         this.slider_item = slider_id
 
+        this.element =  document.getElementById(slider_id);
+
         this.sliderIndex = 1;
 
-        this.slides = document.querySelectorAll("#mySlides > div");
+        this.slides = this.element.getElementsByClassName("mySlides");
 
-        console.log(this.slides);
+        this.back_button = this.element.getElementsByClassName('left-arrow').item(0);
 
+        this.next_button = this.element.getElementsByClassName('right-arrow').item(0);
+
+        self = this;
         // Next/previous controls
-        this.plusSlides = function (n) {
-            showSlides(this.sliderIndex += n);
-        }
+        this.back_button.addEventListener('click', function(e) {
+            e.preventDefault();
+            self.showSlides(self.sliderIndex += -1);
+        });
+
+        this.next_button.addEventListener('click', function(e) {
+            e.preventDefault();
+            self.showSlides(self.sliderIndex += 1);
+        });
 
         this.currentSlide = function(n) {
-        showSlides(slideIndex = n);
+            showSlides(this.sliderIndex = n);
         }
 
         this.showSlides = function(n) {
             var i;
-
-            if (n > this.slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = this.slides.length}
+            if (n > this.slides.length) {this.sliderIndex = 1} 
+            if (n < 1) {this.sliderIndex = this.slides.length}
             for (i = 0; i < this.slides.length; i++) {
-                this.slides[i].style.display = "none";
+                this.slides[i].style.display = "none"; 
             }
-            this.slides[slideIndex-1].style.display = "block";
+            this.slides[this.sliderIndex-1].style.display = "block"; 
         }
-
+        
         this.showSlides(this.slideIndex);
+
     }
 
-    var big_slider_one = new bannerSlider("mySlides");
+    var big_slider_one = new bannerSlider("my-slider-one");
 
-    /*
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    // Next/previous controls
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex-1].style.display = "block";
-    }
-    */
-
-
-  </script>
+ </script>
