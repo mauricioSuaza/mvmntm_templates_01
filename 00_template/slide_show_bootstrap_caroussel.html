@@ -18,7 +18,7 @@
             </a>
         </div>
     </div>
-  
+
 
     <div class="mySlides fade" style="background-image: url('http://via.placeholder.com/1200x500');">
         <div class="heading-container second-slide">
@@ -36,7 +36,7 @@
             </a>
         </div>
     </div>
-  
+
     <div class="mySlides fade" style="background-image: url('http://via.placeholder.com/1200x500');">
         <div class="heading-container third-slide">
             <div class="title-box">
@@ -115,17 +115,17 @@
             SKLDAJSLKDJ SLKDJALSKDJ
         </h2>
         <p class="headline-paragraph">
-            Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que 
-            tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parecerlo un español que 
+            Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que
+            tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parecerlo un español que
             se puede leer. Muchos paquetes de autoedición y editores de páginas web
         </p>
     </div>
-    <div class="content">
+    <div class="content headline">
         <p class="content-paragraph">
                 ¿De dónde viene?
-                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo, 
-                haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua del latín, "consecteur", 
-                en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" 
+                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo,
+                haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua del latín, "consecteur",
+                en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum"
         </p>
     </div>
 </div>
@@ -146,7 +146,7 @@
         height:70vh;
         background-position: center;
         background-size: cover;
-        
+
     }
 
     .prev, .next {
@@ -208,7 +208,12 @@
     }
 
     .third-slide{
-        top:20%;
+        top:50%;
+        -webkit-transform: translate(0,-50%);
+         -moz-transform:   translate(0,-50%);
+         -ms-transform:    translate(0,-50%);
+         -o-transform:     translate(0,-50%);
+         transform:        translate(0,-50%);
     }
 
     .slide-button{
@@ -267,53 +272,50 @@
     }
 
     @-webkit-keyframes fade {
-        from {opacity: .4} 
+        from {opacity: .4}
         to {opacity: 1}
     }
 
     @keyframes fade {
-        from {opacity: .4} 
+        from {opacity: .4}
         to {opacity: 1}
     }
 
 
-    
+
 
     .two-image-section-container{
-        height: 60vh;
-        width:100%;
-        display: block;
-        margin-top: 10px;
+      width: 100%;
+      display: inline-block;
+      margin-top: 10px;
     }
 
     .left-image-section{
-        width:60%;
-        background-position: center;
-        background-size: cover;
-        height: 100%;
-        display: inline-block;
-        float: left;
+      width: 60%;
+      background-position: center;
+      background-size: cover;
+      height: 600px;
+      float: left;
     }
 
     .right-image-section{
-        width:40%;
-        background-position: center;
-        background-size: cover;
-        height: 100%;
-        display: inline-block;
-        float: left;
+      width: 40%;
+      background-position: center;
+      background-size: cover;
+      height: 600px;
+      float: left;
     }
-    
+
     .image-text-container{
         position: relative;
         top:70%;
-        left: 5%;
+        margin-left: 5%;
         color: #fff;
         text-transform: uppercase;
     }
 
     .image-section-text{
-        font-size: 15px;  
+        font-size: 15px;
     }
 
     .image-text-container a{
@@ -322,13 +324,12 @@
     }
 
     .big-image-section-container{
-        height: 70vh;
-        width: 100%;
-        display: block;
-        background-position: center;
-        background-size: cover;
-        margin-top: 10px;
-   
+      height: 500px;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+      margin-top: 10px;
+
     }
 
     .collection-text-container{
@@ -339,11 +340,13 @@
     }
 
     .headline{
-        font-size: 20px;
-        width: 70%;
-        margin-left: 15%;
-        text-align: center;
-        margin-top: 10px;
+      font-size: 20px;
+      width: 75%;
+      text-align: center;
+      letter-spacing: 1px;
+      line-height: 1.5;
+      margin: 0px auto;
+      padding: 20px 0px;
     }
 
     .title {
@@ -357,19 +360,16 @@
         color: #636363;
         font-style: italic;
         font-weight: lighter;
-    }   
+    }
 
     .content-paragraph{
-        color: #636363;
-        font-weight: 200;
-        width: 70%;
-        margin-left: 15%;
-        text-align: center;
-        line-height: 22px;
+      color: #636363;
+      font-weight: 200;
+      text-align: center;
     }
 
     /* Medium devices (landscape tablets, 768px and down) */
-    @media only screen and (max-width: 768px) {
+    @media (max-width: 768px) {
 
         .first-slide{
             float: none;
@@ -387,51 +387,69 @@
         }
 
         .left-image-section{
-            width:100%;
-            display: block;
+          width:100%;
+          float: none;
         }
 
         .right-image-section{
-            width:100%;
-            display: block;
+          width:100%;
+          float: none;
+        }
+
+        .headline{
+          width: 100%;
         }
     }
-    
+
 
 </style>
 
-  <script>
+<script>
 
-    
-   
-    
-    
-    var slideIndex = 1;
-    showSlides(slideIndex);
+    function bannerSlider (slider_id) {
 
-    // Next/previous controls
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
+        this.slider_item = slider_id
+
+        this.element =  document.getElementById(slider_id);
+
+        this.sliderIndex = 1;
+
+        this.slides = this.element.getElementsByClassName("mySlides");
+
+        this.back_button = this.element.getElementsByClassName('left-arrow').item(0);
+
+        this.next_button = this.element.getElementsByClassName('right-arrow').item(0);
+
+        self = this;
+        // Next/previous controls
+        this.back_button.addEventListener('click', function(e) {
+            e.preventDefault();
+            self.showSlides(self.sliderIndex += -1);
+        });
+
+        this.next_button.addEventListener('click', function(e) {
+            e.preventDefault();
+            self.showSlides(self.sliderIndex += 1);
+        });
+
+        this.currentSlide = function(n) {
+            showSlides(this.sliderIndex = n);
+        }
+
+        this.showSlides = function(n) {
+            var i;
+            if (n > this.slides.length) {this.sliderIndex = 1} 
+            if (n < 1) {this.sliderIndex = this.slides.length}
+            for (i = 0; i < this.slides.length; i++) {
+                this.slides[i].style.display = "none"; 
+            }
+            this.slides[this.sliderIndex-1].style.display = "block"; 
+        }
+        
+        this.showSlides(this.slideIndex);
+
     }
 
-    // Thumbnail image controls
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
+    var big_slider_one = new bannerSlider("my-slider-one");
 
-    function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) {slideIndex = 1} 
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; 
-    }
-    slides[slideIndex-1].style.display = "block"; 
-    }
-    
- 
-  
-  </script>
-  
-  
+ </script>
