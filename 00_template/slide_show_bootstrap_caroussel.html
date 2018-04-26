@@ -1,6 +1,6 @@
 
 
-<div class="slideshow-container">
+<div class="slideshow-container" id="mySlides">
 
     <div class="mySlides fade" style="background-image: url('http://via.placeholder.com/1200x500');">
         <div class="heading-container first-slide">
@@ -406,6 +406,42 @@
 
   <script>
 
+    function bannerSlider (slider_id) {
+
+        this.slider_item = slider_id
+
+        this.sliderIndex = 1;
+
+        this.slides = document.querySelectorAll("#mySlides > div");
+
+        console.log(this.slides);
+
+        // Next/previous controls
+        this.plusSlides = function (n) {
+            showSlides(this.sliderIndex += n);
+        }
+
+        this.currentSlide = function(n) {
+        showSlides(slideIndex = n);
+        }
+
+        this.showSlides = function(n) {
+            var i;
+
+            if (n > this.slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = this.slides.length}
+            for (i = 0; i < this.slides.length; i++) {
+                this.slides[i].style.display = "none";
+            }
+            this.slides[slideIndex-1].style.display = "block";
+        }
+
+        this.showSlides(this.slideIndex);
+    }
+
+    var big_slider_one = new bannerSlider("mySlides");
+
+    /*
     var slideIndex = 1;
     showSlides(slideIndex);
 
@@ -429,7 +465,7 @@
     }
     slides[slideIndex-1].style.display = "block";
     }
-
+    */
 
 
   </script>
